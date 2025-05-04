@@ -7,73 +7,130 @@
 
 /* Общие стили */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f1f6;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s ease;
 }
 
+/* Контейнер */
 .container {
     width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
+/* Заголовки */
 h1, h2 {
-    color: #2c3e50;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
+/* Заголовок и описание в хедере */
 header {
-    background-color: #3498db;
+    background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 42px;
+    font-weight: bold;
 }
 
 header p {
-    font-size: 18px;
-}
-
-.email-link {
-    font-size: 18px;
-    display: inline-block;
-    margin-top: 10px;
-    color: #fff;
-}
-
-section {
-    padding: 40px 0;
-}
-
-h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li {
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
+header .email-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header .email-link:hover {
+    color: #3498db;
+}
+
+/* Секции */
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Навыки */
+ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+ul li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+ul li::before {
+    content: '•';
+    font-size: 24px;
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Проекты */
+.projects ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projects a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.projects a:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #2c3e50;
+    background-color: #333;
     color: #fff;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+/* Анимации и переходы */
+body, h1, h2, p {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e74c3c;
 }
