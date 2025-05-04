@@ -12,34 +12,36 @@ body {
     color: #333;
     line-height: 1.6;
     transition: background-color 0.3s ease;
+    padding: 0 20px;
 }
 
 /* Контейнер */
 .container {
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Заголовки */
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
     color: #333;
     margin-bottom: 20px;
+    transition: color 0.3s ease;
 }
 
-/* Заголовок и описание в хедере */
+/* Заголовок в хедере */
 header {
     background-color: #333;
     color: #fff;
-    padding: 40px 0;
+    padding: 60px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
 header h1 {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: bold;
 }
 
@@ -48,33 +50,41 @@ header p {
     margin-bottom: 10px;
 }
 
-header .email-link {
+header .email-link, header .social-link {
     font-size: 18px;
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
-header .email-link:hover {
+header .email-link:hover, header .social-link:hover {
     color: #3498db;
 }
 
 /* Секции */
 section {
     padding: 60px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
+/* Стили для опыта работы */
+.job {
     margin-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 
-/* Навыки */
+.job:hover {
+    transform: translateY(-10px);
+}
+
+/* Стили для списка навыков */
 ul {
     list-style-type: none;
     margin-left: 0;
+    padding-left: 0;
 }
 
 ul li {
@@ -82,6 +92,8 @@ ul li {
     margin-bottom: 15px;
     padding-left: 15px;
     position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 ul li::before {
@@ -93,20 +105,16 @@ ul li::before {
     top: 0;
 }
 
-/* Проекты */
-.projects ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
+ul li:nth-child(1) {
+    animation-delay: 0.2s;
 }
 
-.projects a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.3s ease;
+ul li:nth-child(2) {
+    animation-delay: 0.4s;
 }
 
-.projects a:hover {
-    text-decoration: underline;
+ul li:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 /* Футер */
@@ -116,21 +124,44 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 60px;
+    transition: background-color 0.3s ease;
 }
 
 footer p {
     font-size: 18px;
 }
 
-/* Анимации и переходы */
-body, h1, h2, p {
-    transition: color 0.3s, background-color 0.3s;
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-a {
-    transition: color 0.3s ease;
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
-a:hover {
-    color: #e74c3c;
+/* Добавление кнопок с эффектами */
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
