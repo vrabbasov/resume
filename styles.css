@@ -1,48 +1,28 @@
-/* Сброс стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Общие стили */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f1f6;
+    background: linear-gradient(135deg, #f3f4f9, #e1e5eb); /* Нежный градиент */
     color: #333;
     line-height: 1.6;
-    transition: background-color 0.3s ease;
     padding: 0 20px;
-}
-
-/* Контейнер */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Заголовки */
-h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 /* Заголовок в хедере */
 header {
-    background-color: #333;
+    background: linear-gradient(45deg, #2980b9, #3498db); /* Градиент для заголовка */
     color: #fff;
-    padding: 60px 0;
+    padding: 80px 0; /* Увеличено расстояние для улучшения восприятия */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Мягкая тень */
     transition: background-color 0.3s ease;
 }
 
 header h1 {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 50px; /* Увеличен размер для более выразительного заголовка */
+    font-weight: 700;
+    letter-spacing: 2px; /* Увеличено расстояние между буквами для лучшего восприятия */
+    text-transform: uppercase; /* Сделан заголовок более строгим */
 }
 
 header p {
@@ -60,7 +40,7 @@ header .email-link, header .social-link {
 }
 
 header .email-link:hover, header .social-link:hover {
-    color: #3498db;
+    color: #f39c12; /* Яркий акцент при наведении */
 }
 
 /* Секции */
@@ -70,51 +50,37 @@ section {
     animation: fadeIn 1s forwards;
 }
 
-/* Стили для опыта работы */
+/* Стили для фона с текстурами */
+section:nth-of-type(odd) {
+    background: #fff;
+}
+
+section:nth-of-type(even) {
+    background: linear-gradient(135deg, #fafafa, #f1f1f1); /* Легкий градиент для чередующихся секций */
+}
+
+/* Стили для карточек работы */
 .job {
-    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Мягкая тень */
     transition: transform 0.3s ease;
 }
 
 .job:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Эффект при наведении */
 }
 
-/* Стили для списка навыков */
-ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-ul li {
-    font-size: 18px;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-ul li::before {
-    content: '•';
+.job h3 {
+    color: #2c3e50;
     font-size: 24px;
-    color: #3498db;
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-weight: bold;
 }
 
-ul li:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-ul li:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-ul li:nth-child(3) {
-    animation-delay: 0.6s;
+.job p {
+    font-size: 18px;
+    color: #7f8c8d;
 }
 
 /* Футер */
@@ -141,16 +107,7 @@ footer p {
     }
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Добавление кнопок с эффектами */
+/* Стили для кнопок */
 button {
     padding: 10px 20px;
     background-color: #3498db;
@@ -159,6 +116,7 @@ button {
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 4px; /* Скругленные углы для кнопок */
 }
 
 button:hover {
